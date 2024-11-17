@@ -12,7 +12,7 @@ const CategoryProducts = () => {
         `https://fakestoreapi.com/products/category/${name}`
       );
       const data = await response.json();
-      console.log(data);
+
       setProducts(data);
     };
     fetchProducts();

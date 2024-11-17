@@ -6,20 +6,18 @@ const ProductCard = () => {
   const navigate = useNavigate();
 
   const [product, setProduct] = useState({});
-  console.log(id, "id", product);
 
   useEffect(() => {
     const fetchProduct = async () => {
       const response = await fetch(`https://fakestoreapi.com/products/${id}`);
       const data = await response.json();
-      console.log(data);
+
       setProduct(data);
     };
     fetchProduct();
   }, []);
 
   const handleCart = (product, redirect) => {
-    console.log(product);
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     const isProduct = cart.find((item) => item.id === product.id);
     if (isProduct) {
