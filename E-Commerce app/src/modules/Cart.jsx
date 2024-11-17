@@ -32,7 +32,7 @@ const Cart = () => {
       if (item.id === id) {
         return {
           ...item,
-          quantity: item.quantity - 1,
+          quantity: item.quantity > 1 ? item.quantity - 1 : 1,
         };
       }
       return item;
