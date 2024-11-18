@@ -17,6 +17,7 @@ const CategoryCard = ({ cards }) => {
             {cards.map((card) => {
               return (
                 <Link
+                  key={card}
                   to={`/categories/${card}`}
                   className="p-4 md:w-1/3 cursor-pointer"
                 >
@@ -40,7 +41,7 @@ const CategoryCard = ({ cards }) => {
                       </h2>
                     </div>
                     <div className="flex-grow">
-                      <a className="mt-3 text-blue-500 inline-flex items-center">
+                      <span className="mt-3 text-blue-500 inline-flex items-center">
                         Explore
                         <svg
                           fill="none"
@@ -53,7 +54,7 @@ const CategoryCard = ({ cards }) => {
                         >
                           <path d="M5 12h14M12 5l7 7-7 7"></path>
                         </svg>
-                      </a>
+                      </span>
                     </div>
                   </div>
                 </Link>

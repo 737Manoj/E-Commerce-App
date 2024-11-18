@@ -44,7 +44,11 @@ const Header = () => {
         <nav className="md:ml-auto md:mr-auto flex flex-wrap items-center text-base justify-center">
           {navigations.map((navigation) => {
             return (
-              <Link to={navigation.path} className="mr-5 hover:text-gray-900">
+              <Link
+                key={navigation.name}
+                to={navigation.path}
+                className="mr-5 hover:text-gray-900"
+              >
                 {navigation.name}
               </Link>
             );
